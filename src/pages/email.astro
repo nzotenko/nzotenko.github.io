@@ -1,0 +1,844 @@
+---
+import { Image } from "astro:assets";
+import Layout from "../layouts/Layout.astro";
+
+import screenshot1 from "../assets/metro.jpg";
+import screenshot2 from "../assets/infrastructure.png";
+import screenshot3 from "../assets/form.png";
+---
+
+<Layout title="Послание в космос" faviconEmoji="📡">
+  <header class="header">
+    <button
+      class="button"
+      title="Toggle email only controls"
+      onclick="document.body.classList.toggle('show-email-only')"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        class="lucide lucide-mail"
+        ><rect width="20" height="16" x="2" y="4" rx="2"></rect><path
+          d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg
+      >
+    </button>
+
+    <button class="button" aria-label="Export to email" id="share-to-email">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        class="lucide lucide-clipboard-copy"
+        ><rect width="8" height="4" x="8" y="2" rx="1" ry="1"></rect><path
+          d="M8 4H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"
+        ></path><path d="M16 4h2a2 2 0 0 1 2 2v4"></path><path d="M21 14H11"
+        ></path><path d="m15 10-4 4 4 4"></path></svg
+      >
+    </button>
+  </header>
+  <table id="email" cellpadding="0" cellspacing="0" class="space-signal">
+    <tbody>
+      <tr>
+        <td>
+          <div>
+            <div class="bg mw-600 m-auto">
+              <table
+                align="center"
+                border="0"
+                cellpadding="0"
+                cellspacing="0"
+                role="presentation"
+                class="collapse w-100"
+              >
+                <tbody>
+                  <tr>
+                    <td
+                      class="collapse text-center"
+                      style={{
+                        direction: "ltr",
+                        fontSize: "0px",
+                        padding: "24px 4px",
+                      }}
+                    >
+                      <div class="hide-email-only m-auto mw-600">
+                        <table
+                          align="center"
+                          border="0"
+                          cellpadding="0"
+                          cellspacing="0"
+                          role="presentation"
+                          class="collapse w-100"
+                        >
+                          <tbody>
+                            <tr>
+                              <td
+                                style={{
+                                  borderCollapse: "collapse",
+                                  direction: "ltr",
+                                  fontSize: "0px",
+                                  padding: "0px",
+                                  textAlign: "center",
+                                }}
+                              >
+                                <div
+                                  style={{
+                                    direction: "ltr",
+                                    display: "inline-block",
+                                    fontSize: "0px",
+                                    textAlign: "left",
+                                    verticalAlign: "top",
+                                    width: "100%",
+                                  }}
+                                >
+                                  <table
+                                    border="0"
+                                    cellpadding="0"
+                                    cellspacing="0"
+                                    role="presentation"
+                                    width="100%"
+                                    class="collapse"
+                                  >
+                                    <tbody>
+                                      <tr>
+                                        <td
+                                          style={{
+                                            borderCollapse: "collapse",
+                                            verticalAlign: "top",
+                                            padding: "0px",
+                                          }}
+                                        >
+                                          <table
+                                            border="0"
+                                            cellpadding="0"
+                                            cellspacing="0"
+                                            role="presentation"
+                                            style={{
+                                              borderCollapse: "collapse",
+                                            }}
+                                            width="100%"
+                                          >
+                                            <tbody>
+                                              <tr>
+                                                <td
+                                                  align="center"
+                                                  style={{
+                                                    borderCollapse: "collapse",
+                                                    fontSize: "0px",
+                                                    padding: "10px 25px",
+                                                    wordBreak: "break-word",
+                                                  }}
+                                                >
+                                                  <div
+                                                    style={{
+                                                      fontFamily:
+                                                        "Martian Mono, Futura, Helvetica, sans-serif",
+                                                      fontSize: "14px",
+                                                      lineHeight: "24px",
+                                                      textAlign: "center",
+                                                      color: "#ffffff",
+                                                    }}
+                                                  >
+                                                    Если что-то пошло не так,
+                                                    <a
+                                                      href="https://nzotenko.github.io/email"
+                                                      class="link"
+                                                      target="_blank"
+                                                      >есть копия на гитхабе</a
+                                                    >
+                                                  </div>
+                                                </td>
+                                              </tr>
+                                            </tbody>
+                                          </table>
+                                        </td>
+                                      </tr>
+                                    </tbody>
+                                  </table>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+
+                      <div class="bg-white br-16 mw-600 m-auto">
+                        <table
+                          align="center"
+                          border="0"
+                          cellpadding="0"
+                          cellspacing="0"
+                          role="presentation"
+                          class="br-16 w-100 collapse bg-white"
+                        >
+                          <tbody>
+                            <tr>
+                              <td
+                                style={{
+                                  borderCollapse: "collapse",
+                                  direction: "ltr",
+                                  fontSize: "0px",
+                                  padding: "20px 0",
+                                  textAlign: "center",
+                                }}
+                              >
+                                <div
+                                  style={{
+                                    fontSize: "0px",
+                                    textAlign: "left",
+                                    direction: "ltr",
+                                    display: "inline-block",
+                                    verticalAlign: "top",
+                                    width: "100%",
+                                  }}
+                                >
+                                  <table
+                                    border="0"
+                                    cellpadding="0"
+                                    cellspacing="0"
+                                    role="presentation"
+                                    style={{
+                                      borderCollapse: "collapse",
+                                      verticalAlign: "top",
+                                    }}
+                                    width="100%"
+                                  >
+                                    <tbody>
+                                      <tr>
+                                        <td align="left" class="content-block">
+                                          <p class="paragraph">
+                                            Привет, марсиане 🖖
+                                          </p>
+                                          <p class="paragraph">
+                                            Меня зовут Николай, я узнал, что у
+                                            вас открылась вакансия
+                                            фронтенд-разработчика и не смог
+                                            пройти мимо.
+                                          </p>
+                                          <p class="paragraph">
+                                            Я хотел бы представить вам свой опыт
+                                            и показать, что я могу быть полезным
+                                            вашей команде.
+                                          </p>
+                                        </td>
+                                      </tr>
+
+                                      <tr>
+                                        <td align="left" class="content-block">
+                                          <h2 class="heading">
+                                            Немного о моем опыте
+                                          </h2>
+                                        </td>
+                                      </tr>
+
+                                      <tr>
+                                        <td align="left" class="content-block">
+                                          <p class="paragraph">
+                                            Последние 5 лет я работаю в компании
+                                            Циан в качестве продуктового
+                                            разработчика в стеке
+                                            React/TypeScript/Node.js/Python. За
+                                            это время я участвовал во множестве
+                                            проектов: проводил A/B-эксперименты,
+                                            редизайнил сложные интерфейсы,
+                                            распиливал монолиты на микросервисы
+                                            и т.д.
+                                          </p>
+
+                                          <p class="paragraph">
+                                            Подробнее расскажу о трех проектах,
+                                            которыми больше всего горжусь и
+                                            люблю:
+                                          </p>
+                                        </td>
+                                      </tr>
+
+                                      <tr>
+                                        <td><br /></td>
+                                      </tr>
+
+                                      <tr>
+                                        <td
+                                          align="center"
+                                          class="content-block"
+                                        >
+                                          <table
+                                            border="0"
+                                            cellpadding="0"
+                                            cellspacing="0"
+                                            role="presentation"
+                                            class="collapse"
+                                          >
+                                            <tbody>
+                                              <tr>
+                                                <td>
+                                                  <Image
+                                                    alt="Карта Московского метро"
+                                                    src={screenshot1}
+                                                    class="image"
+                                                    width="542"
+                                                  />
+                                                </td>
+                                              </tr>
+                                            </tbody>
+                                          </table>
+                                        </td>
+                                      </tr>
+
+                                      <tr>
+                                        <td align="left" class="content-block">
+                                          <h2 class="heading">
+                                            Карта Московского метро
+                                          </h2>
+                                        </td>
+                                      </tr>
+
+                                      <tr>
+                                        <td align="left" class="content-block">
+                                          <p class="paragraph">
+                                            В составе рабочей группы я
+                                            разрабатывал и реализовывал
+                                            design-to-code процесс для
+                                            непрерывного обновления карты
+                                            московского метро: бэкэнд на Python
+                                            для обновления данных и API для всех
+                                            платформ, а также веб-клиент.
+                                          </p>
+
+                                          <p class="paragraph">
+                                            Этот проект не только оптимизировал
+                                            наш цикл разработки, но и
+                                            значительно ускорил введение новых
+                                            станций метро в интерфейс после их
+                                            физического открытия.
+                                          </p>
+
+                                          <p class="paragraph">
+                                            Чтобы увидеть этот интерфейс:
+                                          </p>
+                                          <p class="paragraph">
+                                            1. Перейдите на <a
+                                              class="link"
+                                              href="https://www.cian.ru/kupit-kvartiru-1-komn-ili-2-komn/"
+                                              target="_blank"
+                                              >Циан
+                                            </a>
+                                          </p>
+                                          <p class="paragraph">
+                                            2. Выберите фильтр "Метро"
+                                          </p>
+                                        </td>
+                                      </tr>
+                                    </tbody>
+                                  </table>
+                                </div>
+                              </td>
+
+                              <tr>
+                                <td><br /></td>
+                              </tr>
+
+                              <tr>
+                                <td align="center" class="content-block">
+                                  <table
+                                    border="0"
+                                    cellpadding="0"
+                                    cellspacing="0"
+                                    role="presentation"
+                                    style={{
+                                      borderCollapse: "collapse",
+                                      borderSpacing: "0px",
+                                    }}
+                                  >
+                                    <tbody>
+                                      <tr>
+                                        <td
+                                          style={{
+                                            borderCollapse: "collapse",
+                                            width: "542px",
+                                          }}
+                                        >
+                                          <Image
+                                            alt="Инфраструктура на карте"
+                                            src={screenshot2}
+                                            class="image"
+                                            width="542"
+                                          />
+                                        </td>
+                                      </tr>
+                                    </tbody>
+                                  </table>
+                                </td>
+                              </tr>
+
+                              <tr>
+                                <td
+                                  align="left"
+                                  style={{
+                                    borderCollapse: "collapse",
+                                    fontSize: "0px",
+                                    padding: "10px 25px",
+                                    paddingBottom: "0px",
+                                    wordBreak: "break-word",
+                                  }}
+                                >
+                                  <div class="heading">
+                                    Инфраструктура на карте
+                                  </div>
+                                </td>
+                              </tr>
+
+                              <tr>
+                                <td align="left" class="content-block">
+                                  <p class="paragraph">
+                                    Участие во внутренних хакатонах стало
+                                    значительным достижением в моей карьере. Я
+                                    был частью команд, которые трижды
+                                    завоевывали первое место.
+                                  </p>
+                                  <p class="paragraph">
+                                    Одним из таких проектов стала инфраструктура
+                                    на карте. Впервые представленная на
+                                    хакатоне, она была интегрирована в наш
+                                    продукт и теперь активно используется.
+                                  </p>
+
+                                  <p class="paragraph">
+                                    Можно увидеть этот интерфейс, перейдя на <a
+                                      class="link"
+                                      href="https://www.cian.ru/map/?center=55.61329565530411%2C37.407141951844096&deal_type=sale&engine_version=2&offer_type=flat&region=1&zoom=9"
+                                      target="_blank">карту Циан.</a
+                                    >
+                                  </p>
+                                </td>
+                              </tr>
+                            </tr>
+
+                            <tr>
+                              <td><br /></td>
+                            </tr>
+
+                            <tr>
+                              <td align="left" class="content-block">
+                                <h2 class="heading">
+                                  Развитие фронтенд-комьюнити
+                                </h2>
+                              </td>
+                            </tr>
+
+                            <tr>
+                              <td align="left" class="content-block">
+                                <p class="paragraph">
+                                  Я драйвил развитие фронтенд-комьюнити в Циан.
+                                  Проработал правила коммуникации, стандарты
+                                  принятия решений при помощи фреймворков
+                                  Community Canvas и Sociocracy 3.0, а также
+                                  ритуалы, которые помогли нам стать более
+                                  сплоченными.
+                                </p>
+                                <p class="paragraph">
+                                  Организовывал митапы, брейнштормы, а также
+                                  развивал обмен опытом и помощь внутри команды.
+                                </p>
+                                <p class="paragraph">
+                                  Это помогло сделать фронтенд-комьюнити самым
+                                  активным в компании.
+                                </p>
+                              </td>
+                            </tr>
+
+                            <tr>
+                              <td><br /></td>
+                            </tr>
+
+                            <tr>
+                              <td align="center" class="content-block">
+                                <table
+                                  border="0"
+                                  cellpadding="0"
+                                  cellspacing="0"
+                                  role="presentation"
+                                  class="collapse"
+                                >
+                                  <tbody>
+                                    <tr>
+                                      <td>
+                                        <Image
+                                          alt="Демо формы авторизации"
+                                          src={screenshot3}
+                                          class="image"
+                                          width="542"
+                                        />
+                                      </td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                              </td>
+                            </tr>
+
+                            <tr>
+                              <td align="left" class="content-block">
+                                <h2 class="heading">А еще...</h2>
+                              </td>
+                            </tr>
+
+                            <tr>
+                              <td align="left" class="content-block">
+                                <p class="paragraph">
+                                  Я подготовил форму авторизации, чтобы вам было
+                                  удобнее увидеть, как именно я пишу код.
+                                </p>
+                                <p class="paragraph">
+                                  По этой ссылке вы сможете увидеть демо - <a
+                                    class="link"
+                                    href="https://nzotenko.github.io/"
+                                    target="_blank">nzotenko.github.io</a
+                                  >
+                                  <p class="paragraph">
+                                    Код формы авторизации можно посмотреть <a
+                                      class="link"
+                                      href="https://github.com/nzotenko/nzotenko.github.io/tree/main/src/components/AuthForm"
+                                    >
+                                      в этом репозитории на GitHub</a
+                                    >
+                                  </p>
+                                </p>
+
+                                <tr>
+                                  <td align="center" class="content-block">
+                                    <p class="divider"></p>
+                                  </td>
+                                </tr>
+
+                                <tr>
+                                  <td align="center" class="content-block">
+                                    <p class="paragraph text-center">
+                                      Буду рад вашей обратной связи 🙌
+                                    </p>
+                                  </td>
+                                </tr>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </td>
+
+        <table
+          align="center"
+          border="0"
+          cellpadding="0"
+          cellspacing="0"
+          role="presentation"
+          style="border-collapse: collapse; width: 100%"
+        >
+          <tbody>
+            <tr>
+              <td
+                style="
+                        border-collapse: collapse;
+                        direction: ltr;
+                        font-size: 0px;
+                        padding: 16px;
+                        text-align: center;
+                      "
+              >
+                <div
+                  style="
+                          font-size: 0px;
+                          text-align: left;
+                          direction: ltr;
+                          display: inline-block;
+                          vertical-align: top;
+                          width: 100%;
+                        "
+                >
+                  <table
+                    border="0"
+                    cellpadding="0"
+                    cellspacing="0"
+                    role="presentation"
+                    style="border-collapse: collapse; vertical-align: top"
+                    width="100%"
+                  >
+                    <tbody>
+                      <tr>
+                        <td align="center" class="content-block">
+                          <div
+                            style="
+                                    font-family:
+                                      Martian Mono,
+                                      Futura,
+                                      Helvetica,
+                                      sans-serif;
+                                    font-size: 14px;
+                                    line-height: 24px;
+                                    text-align: center;
+                                    color: #ffffff;
+                                  "
+                          >
+                            <a
+                              href="https://www.linkedin.com/in/nikolay-zotenko-92003183/"
+                              class="link"
+                              target="_blank">Мой профиль в LinkedIn</a
+                            >
+                          </div>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </tr>
+    </tbody>
+
+    <script>
+      function convertElementToHTML(elem: HTMLElement): string {
+        const temp = document.createElement("div");
+        temp.appendChild(elem.cloneNode(true));
+        return temp.innerHTML;
+      }
+
+      function shareToEmail(querySelector: string) {
+        const rootElement = document.querySelector(
+          querySelector,
+        ) as HTMLElement;
+        const elem = recursivelyApplyInlineStyles(rootElement);
+
+        const html = convertElementToHTML(elem);
+
+        navigator.clipboard
+          .writeText(html)
+          .then(() => {
+            alert("HTML string copied to clipboard");
+          })
+          .catch(() => {
+            alert("Failed to copy HTML string to clipboard");
+          });
+      }
+
+      function removeAllDataAttributes(element: HTMLElement) {
+        const attributes = element.attributes;
+
+        const attributesArray = Array.from(attributes);
+
+        attributesArray.forEach((attr) => {
+          if (attr.name.startsWith("data-")) {
+            element.removeAttribute(attr.name);
+          }
+        });
+
+        Object.keys(element.dataset).forEach((key) => {
+          delete element.dataset[key];
+        });
+      }
+
+      function clearAttributes(element: HTMLElement) {
+        element.removeAttribute("class");
+        element.removeAttribute("id");
+        removeAllDataAttributes(element);
+      }
+
+      let stylescheet = null;
+
+      function getStylesheet() {
+        stylescheet = Array.from(document.styleSheets).find((sheet) =>
+          Array.from(sheet.cssRules).some(
+            (rule) =>
+              rule instanceof CSSStyleRule &&
+              rule?.selectorText.includes(".space-signal"),
+          ),
+        );
+
+        if (!stylescheet) {
+          throw new Error("Stylesheet not found");
+        }
+
+        return stylescheet;
+      }
+
+      function replaceCssVariables(cssText: string) {
+        return cssText.replaceAll(/var\((--[^)]+)\)/g, (_, varName) =>
+          getComputedStyle(document.documentElement).getPropertyValue(varName),
+        );
+      }
+
+      function recursivelyApplyInlineStyles(element: HTMLElement) {
+        const newElement = element.cloneNode(true) as HTMLElement;
+        const stylescheet = getStylesheet();
+
+        if (newElement.classList.length > 0) {
+          if (newElement.classList.contains("hide-email-only")) {
+            newElement.classList.remove("hide-email-only");
+          }
+
+          for (let i = 0; i < newElement.classList.length; i++) {
+            const className = newElement.classList.item(i);
+            const rule = Array.from(stylescheet.cssRules).find(
+              (rule) =>
+                rule instanceof CSSStyleRule &&
+                rule?.selectorText.includes(`.${className}`),
+            ) as CSSStyleRule;
+
+            if (rule) {
+              newElement.style.cssText += replaceCssVariables(
+                rule.style.cssText,
+              );
+            }
+          }
+
+          clearAttributes(newElement);
+        }
+
+        if (newElement.children) {
+          newElement.replaceChildren(
+            ...Array.from(newElement.children).map((child) =>
+              recursivelyApplyInlineStyles(child as HTMLElement),
+            ),
+          );
+        }
+
+        return newElement;
+      }
+
+      document.addEventListener("DOMContentLoaded", () => {
+        const shareToEmailButton = document.getElementById("share-to-email");
+
+        shareToEmailButton?.addEventListener("click", () => {
+          shareToEmail("#email");
+        });
+      });
+    </script>
+
+    <style>
+      .space-signal {
+        width: 100%;
+        margin: 0px auto;
+        border-collapse: collapse;
+      }
+
+      .header {
+        display: flex;
+        gap: 16px;
+      }
+
+      .button {
+        background: none;
+        border: none;
+        cursor: pointer;
+        color: currentColor;
+      }
+
+      .hide-email-only {
+        display: none;
+      }
+
+      .bg {
+        background: var(--background);
+      }
+
+      .bg-white {
+        background: var(--light-background);
+      }
+
+      .mw-600 {
+        max-width: 600px;
+      }
+
+      .collapse {
+        border-collapse: collapse;
+      }
+
+      .w-100 {
+        width: 100%;
+      }
+
+      .m-auto {
+        margin: 0 auto;
+      }
+
+      .br-16 {
+        border-radius: 16px;
+      }
+
+      .hide-email-only {
+        display: none;
+      }
+
+      .content-block {
+        border-collapse: collapse;
+        font-size: 0px;
+        padding: 10px 25px;
+        padding-bottom: 12px;
+        word-break: break-word;
+      }
+
+      .text-center {
+        text-align: center;
+      }
+
+      body.show-email-only .hide-email-only {
+        display: block;
+      }
+
+      .paragraph {
+        font-family: var(--font-family);
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 32px;
+        color: var(--light-text);
+        margin: 0 0 16px;
+      }
+
+      .heading {
+        font-family: var(--font-family);
+        font-size: 20px;
+        font-weight: 500;
+        line-height: 24px;
+        color: var(--light-text);
+      }
+
+      .link {
+        color: var(--accent);
+      }
+
+      .image {
+        border: 0;
+        height: auto;
+        line-height: 100%;
+        outline: none;
+        text-decoration: none;
+        border-radius: 8px;
+        display: block;
+        font-size: 13px;
+        width: 100%;
+      }
+
+      .divider {
+        margin: 24px 0;
+        border-top: 3px dotted var(--accent);
+      }
+    </style>
+  </table>
+</Layout>
