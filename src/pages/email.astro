@@ -621,9 +621,10 @@ import screenshot3 from "../assets/form.png";
       }
 
       function shareToEmail(querySelector: string) {
-        const rootElement = document.querySelector(
-          querySelector,
-        ) as HTMLElement;
+        const rootElement = document
+          .querySelector(querySelector)
+          ?.cloneNode(true) as HTMLElement;
+
         const elem = recursivelyApplyInlineStyles(rootElement);
 
         const html = convertElementToHTML(elem);
@@ -639,19 +640,11 @@ import screenshot3 from "../assets/form.png";
       }
 
       function removeAllDataAttributes(element: HTMLElement) {
-        const attributes = element.attributes;
-
-        const attributesArray = Array.from(attributes);
-
-        attributesArray.forEach((attr) => {
-          if (attr.name.startsWith("data-")) {
-            element.removeAttribute(attr.name);
+        if (Object.keys(element.dataset).length > 0) {
+          for (const key in Object.keys(element.dataset)) {
+            delete element.dataset[key];
           }
-        });
-
-        Object.keys(element.dataset).forEach((key) => {
-          delete element.dataset[key];
-        });
+        }
       }
 
       function clearAttributes(element: HTMLElement) {
@@ -685,16 +678,15 @@ import screenshot3 from "../assets/form.png";
       }
 
       function recursivelyApplyInlineStyles(element: HTMLElement) {
-        const newElement = element.cloneNode(true) as HTMLElement;
         const stylescheet = getStylesheet();
 
-        if (newElement.classList.length > 0) {
-          if (newElement.classList.contains("hide-email-only")) {
-            newElement.classList.remove("hide-email-only");
+        if (element.classList.length > 0) {
+          if (element.classList.contains("hide-email-only")) {
+            element.classList.remove("hide-email-only");
           }
 
-          for (let i = 0; i < newElement.classList.length; i++) {
-            const className = newElement.classList.item(i);
+          for (let i = 0; i < element.classList.length; i++) {
+            const className = element.classList.item(i);
             const rule = Array.from(stylescheet.cssRules).find(
               (rule) =>
                 rule instanceof CSSStyleRule &&
@@ -702,24 +694,21 @@ import screenshot3 from "../assets/form.png";
             ) as CSSStyleRule;
 
             if (rule) {
-              newElement.style.cssText += replaceCssVariables(
-                rule.style.cssText,
-              );
+              element.style.cssText += replaceCssVariables(rule.style.cssText);
             }
           }
 
-          clearAttributes(newElement);
+          clearAttributes(element);
         }
 
-        if (newElement.children) {
-          newElement.replaceChildren(
-            ...Array.from(newElement.children).map((child) =>
-              recursivelyApplyInlineStyles(child as HTMLElement),
-            ),
-          );
+        if (element.children) {
+          for (let i = 0; i < element.children.length; i++) {
+            const child = element.children[i] as HTMLElement;
+            recursivelyApplyInlineStyles(child);
+          }
         }
 
-        return newElement;
+        return element;
       }
 
       document.addEventListener("DOMContentLoaded", () => {
